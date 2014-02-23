@@ -1,6 +1,65 @@
-<html>
-<head></head>
-<body>
-hello lafolle
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/lib/bootstrap/css/bootstrap.css">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/static/css/customstyle.css">
+</head>
+
+
+<body ng-app='Sak' ng-controller='SakCtrl'>
+
+	<div id="topstrip" >
+		<ul>
+			<li>
+				<span id="sc" ng-click="goto('main', 'main')"><strong>{{name}}</strong></span> 
+			</li>
+
+			<li class="dropdown">
+					<a class="dropdown-toggle theme">personal</a>
+					<ul class="dropdown-menu">
+						<li ng-click="goto('personal', 'Beri')"><a style="line-height: 18px; padding-left: 0px;">Beri</a></li>
+						<li ng-click="goto('personal', 'Puducherry')"><a style="line-height: 18px; padding-left: 0px;">Puducherry</a></li>
+						<li ng-click="goto('personal', 'Jaisalmer')"><a style="line-height: 18px; padding-left: 0px;">Jaisalmer</a></li>
+						<!-- <li ng-click="goto('personal', 'Ladakh')"><a style="line-height: 18px; padding-left: 0px;">Ladakh</a></li> -->
+					</ul>
+				<span class="clearlr">|</span>
+			</li>
+
+			<li>
+				<span class="theme" id="commit"><a>adaptive</a></span> <span class="clearlr">|</span>
+			</li>
+
+			<li>
+				<span class="theme" id="biography"><a>biography</a></span> <span class="clearlr">|</span>
+			</li>
+
+			<li>
+				<span class="theme" id="blog"><a>blog</a></span> <span class="clearlr">|</span>
+			</li>
+
+			<li>
+				<span class="theme" id="sire"><a>sire</a></span> <span class="clearlr">|</span>
+			</li>
+
+			<li>
+				<span class="theme" id="connect"><a>connect</a></span>
+			</li>
+
+		<ul>
+	</div>
+
+	<div id="mainbody" ng-view>
+	</div>
+
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+	<script type="text/javascript" src="/static/lib/bootstrap/ui-bootstrap-0.5.0.js"></script>
+	<script type="text/javascript" src="/static/js/app.js"></script>
+
 </body>
+
+
 </html>
