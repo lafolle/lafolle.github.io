@@ -1,0 +1,48 @@
+<div style="height: 600px; width: 12000px; position: absolute; left: 0%; top: 30%;">
+
+
+
+
+	<div style="padding-left: 20px;">
+
+		<div class="text" ng-show="theme=='personal'&&project=='Beri'">
+			"The Roots"
+
+			<p>Sometimes its a race growing up , moving in cars,
+			parking in lanes, money coming in , money going out, 
+			And then there are some lucky ones successful in finding 
+			their roots and putting this metropolitan anxiety to rest ,  
+			and breathing a non toxic air. These roots are deeper than  
+			your ancestors, great grandfathers , grandfathers and fathers. 
+			This is your village, which will probably never turn into a concrete   
+			garbage for as long as you are busy living in a furiously growing  
+			city. 
+			Beri, only 24.5 kms from my hometown , still produces a heavy  
+			change of visuals from  city buildings to vast empty spaces of agricultural  
+			land and mud-made homes .The quick difference in just half an hour itself is very exciting. Beri is my ancestral land , my Great granfathers and their great history ,  still hangs reposeful  on every wall of the house. There's always a thing about old empty places,  when you open them , the air you breathe takes you to the world war era.  
+		</div>
+
+		<div class="text" ng-show="theme=='personal'&&project=='Jaisalmer'">
+			<p>This life is a goodly thing.
+				We walk , we chant, we see
+				we ignore.
+				But this life is a goodly thing,
+				where in every direction you see
+				is a sense of life. A life beating
+				through a heart or flying carefree
+				in the meadows.
+				A life sitting all quiet and pensive,
+				or a life nurturing another.
+				Its not just in me that i feel i exist
+				Its everywhere i see, breathing exists.
+				And this life seems a goodly thing.
+			</p>
+		</div>		
+
+		<div ng-repeat="link in photolinks" style="display: inline; padding-top: 0px; padding-bottom: 0px;">
+			<img width="{{link.data.width}}" height="{{link.data.height}}" ng-src="{{link.baselink}}{{link.data.name}}"  />
+		</div>
+
+	</div>
+
+</div>	

@@ -1,0 +1,108 @@
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	/*float: left;*/
+	background: white;
+	font-size: 13px;
+}
+
+img {
+	/*display: inline;*/
+	padding-left: 20px;
+	padding-right: 20px;
+	/*width: 600px;*/
+	/*height: 400px;*/
+}
+
+a {
+	color: black;
+	text-decoration: none;	
+}
+
+a:hover {
+	text-decoration: none;
+	color: #7F584D;
+}
+
+#sc {
+	font-size: 20px;
+	color: #7F584D;
+	padding-right: 20px;	
+}
+
+.text {
+	/*position: relative;*/
+	/*top: 100px;*/
+	display: inline;
+	width: 360px; 
+	height: 500px; 
+	float: left;
+	padding-right: 10px;
+}
+
+.theme {
+	color: black;
+	text-decoration: none;
+}
+
+.theme:hover {
+	color: #7F584D;
+	cursor: default;
+}
+
+
+.view {
+	position: absolute;
+	/*top: 15%;*/
+	left: 0%;
+	bottom: 10%;
+}
+
+#topstrip {
+	position: fixed;
+	/*top: 50px;*/
+	top: 0;
+	left: 0;
+	right:0;
+	width:auto;
+	height:50px;
+}
+
+#topstrip li {
+	display: inline;
+	opacity: 0.9;
+	font-size: 95%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	/*padding-left: 20px;*/
+	/* padding-right: 20px; */
+}
+
+#mainbody {
+	margin-top:51px;
+	float:left;
+	width:100%;
+}
+
+.clearlr{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.directive {
+	opacity: 0.9;
+	font-size: 95%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	padding-right: 20px;	
+}
+
+.coverimage {
+	position: relative;
+	display: block;
+	top: 150px;
+	left: 175%;
+	bottom: 20px;
+	opacity: 0.8;
+}
