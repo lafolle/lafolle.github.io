@@ -60,10 +60,10 @@ a:hover {
 
 #topstrip {
 	position: fixed;
-	top: 50px;
-	top: 0;
 	left: 0;
 	right:0;
+	margin-left: 2%;
+	margin-top: 1%;
 	width:auto;
 	height:50px;
 }
@@ -73,7 +73,7 @@ a:hover {
 	opacity: 0.9;
 	font-size: 95%;
 	padding-top: 0px;
-	padding-bottom: 0px;
+	padding-bottom: 1px;
 	/*padding-left: 20px;*/
 	/* padding-right: 20px; */
 }
