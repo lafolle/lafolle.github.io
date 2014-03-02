@@ -29,8 +29,8 @@ mod.controller('SakCtrl', ['$scope', '$location', function($scope, $location){
 	$scope.theme = 'personal';
 	$scope.project = $routeParams.project;
 	$scope.photolinks = [];
-
-	for(var i=1;i<=$scope.projectmap[$scope.theme][$scope.project].images_count;i++)
+	console.log("project: "+$scope.project)
+	for(var i=0;i<$scope.projectmap[$scope.theme][$scope.project].images_count;i++)
 		$scope.photolinks.push({'baselink': '/static/photographs/' + $scope.theme + '/' + $scope.project + '/',
 								'data': $scope.projectmap[$scope.theme][$scope.project].links[i]})
 
@@ -69,9 +69,11 @@ mod.directive('fadein', function(){
 			// beri 7000
 			var width;
 			if (scope.theme == 'personal' && scope.project == 'Beri')
-				width = '7000px';
+				width = '9000px';
 			else if ( scope.theme == 'personal' && scope.project == 'Jaisalmer')
-				width = '7000px';
+				width = '7900px';
+			else if ( scope.theme == 'personal' && scope.project == 'Ladakh')
+				width = '8100px';
 			element.css({'width': width});
 		}
 	}
