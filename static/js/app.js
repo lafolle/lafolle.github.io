@@ -74,7 +74,7 @@ mod.directive('fadein', function(){
 				width = '7900px';
 			else if ( scope.theme == 'personal' && scope.project == 'Ladakh')
 				width = '8100px';
-			else if ( $scope.current_theme == 'main' && $scope.current_scope == 'main')
+			else if ( scope.current_theme == 'main' && scope.current_scope == 'main')
 				width = 'auto';
 			element.css({'width': width});
 		}
