@@ -1,9 +1,16 @@
-
 body {
 	font-family: 'Quicksand', sans-serif;
 	/*float: left;*/
 	background: white;
 	font-size: 13px;
+}
+
+darling {
+	text-decoration: none;
+}
+
+darling:hover {
+	cursor: default;
 }
 
 img {
@@ -70,7 +77,7 @@ a:hover {
 
 #topstrip li {
 	display: inline;
-	opacity: 0.9;
+	opacity: 1.0;
 	font-size: 95%;
 	padding-top: 0px;
 	padding-bottom: 1px;
@@ -104,5 +111,7 @@ a:hover {
 	top: 150px;
 	left: 175%;
 	bottom: 20px;
-	opacity: 0.8;
+	opacity: 1;
+	width: 600px;
+	height: 400px;
 }
