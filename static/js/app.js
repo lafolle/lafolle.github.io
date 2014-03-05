@@ -1,7 +1,8 @@
-var mod = angular.module('Sak', ['ui.bootstrap']).config(['$routeProvider', function($routeProvider){
+var mod = angular.module('Sak', ['ui.bootstrap']).config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider){
 	$routeProvider.when('/personal/:project', {templateUrl: '/static/partials/personal.html', controller: 'PersonalCtrl'}).
 					when('/sire', {templateUrl: '/static/partials/sire.html', controller: 'SireCtrl'}).
 					when('/', {templateUrl: '/static/partials/main.html', controller: 'SakCtrl'});
+	$locationProvider.html5Mode(true);
 }]);
 
 
