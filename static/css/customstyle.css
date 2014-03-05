@@ -5,6 +5,14 @@ body {
 	font-size: 13px;
 }
 
+darling {
+	text-decoration: none;
+}
+
+darling:hover {
+	cursor: default;
+}
+
 img {
 	/*display: inline;*/
 	padding-left: 20px;
