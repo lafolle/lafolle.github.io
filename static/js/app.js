@@ -18,6 +18,7 @@ mod.controller('SakCtrl', ['$scope', '$location', function($scope, $location){
 
 		if ( theme == 'main' && project == 'main' && $scope.theme!='main' && $scope.project!='main'){
 			$location.url('/');
+			return;
 		}
 		if ( theme == 'sire' && project == 'sire' ) $location.url('/sire');
 		else $location.url('/' + theme + '/' + project);
