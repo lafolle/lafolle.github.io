@@ -1,6 +1,7 @@
 var mod = angular.module('Sak', ['ui.bootstrap']).config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider){
 	$routeProvider.when('/personal/:project', {templateUrl: '/static/partials/personal.html', controller: 'PersonalCtrl'}).
 					when('/sire', {templateUrl: '/static/partials/sire.html', controller: 'SireCtrl'}).
+					when('/biography', {templateUrl: '/static/partials/biography.html', controller: 'BiographyCtrl'}).
 					when('/', {templateUrl: '/static/partials/main.html', controller: 'SakCtrl'});
 	$locationProvider.html5Mode(true);
 }]);
@@ -17,26 +18,28 @@ mod.controller('SakCtrl', ['$scope', '$location', function($scope, $location){
 	$scope.goto = function(theme, project){
 		if ( $scope.current_theme == theme && $scope.current_project == project) return;
 
-		if ( theme == 'main' && project == 'main' && $scope.theme!='main' && $scope.project!='main'){
+		if ( theme == 'main' && project == 'main' && $scope.current_theme!='main' && $scope.current_project!='main'){
 			$location.url('/');
 			return;
 		}
-		if ( theme == 'sire' && project == 'sire' ) $location.url('/sire');
-		else $location.url('/' + theme + '/' + project);
 		$scope.current_theme = theme;
-		$scope.current_project = project;
+		$scope.current_project = project;		
+		if ( theme == 'sire' && project == 'sire' ) $location.url('/sire');
+		else if ( theme == 'biography' && project == 'biography' ) $location.url('/biography');
+		else $location.url('/' + theme + '/' + project);
+
 	}
 
 
 }]).controller('PersonalCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
 
-	$scope.theme = 'personal';
-	$scope.project = $routeParams.project;
+	$scope.current_theme = 'personal';
+	$scope.current_project = $routeParams.project;
 	$scope.photolinks = [];
-	console.log("project: "+$scope.project)
-	for(var i=0;i<$scope.projectmap[$scope.theme][$scope.project].images_count;i++)
-		$scope.photolinks.push({'baselink': '/static/photographs/' + $scope.theme + '/' + $scope.project + '/',
-								'data': $scope.projectmap[$scope.theme][$scope.project].links[i]})
+	// console.log("project: "+$scope.current_project)
+	for(var i=0;i<$scope.projectmap[$scope.current_theme][$scope.current_project].images_count;i++)
+		$scope.photolinks.push({'baselink': '/static/photographs/' + $scope.current_theme + '/' + $scope.current_project + '/',
+								'data': $scope.projectmap[$scope.current_theme][$scope.current_project].links[i]})
 
 }]).controller('SireCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
 	console.log('sire controller loaded')
@@ -52,7 +55,9 @@ mod.controller('SakCtrl', ['$scope', '$location', function($scope, $location){
 								data: siremap.personal.sire.links[i]});
 	console.log($scope.photolinks)
 
-}]);
+}]).controller('BiographyCtrl', function($scope){
+
+});
 
 
 // DIRECTIVES
@@ -69,18 +74,30 @@ mod.directive('fadein', function(){
 		restrict: 'A',
 		scope: true,
 		link: function(scope, element, attrs){
-			// jaisalmer 6000
-			// beri 7000
+			scope.current_theme = scope.$parent.current_theme;
+			scope.current_project = scope.$parent.current_project;
+
+			if ( $('#topstrip').css('position') != 'fixed' )
+				$('#topstrip').css('position', 'fixed');
 			var width;
-			if (scope.theme == 'personal' && scope.project == 'Beri')
+			if (scope.current_theme == 'personal' && scope.current_project == 'Beri')
 				width = '9000px';
-			else if ( scope.theme == 'personal' && scope.project == 'Jaisalmer')
+			else if ( scope.current_theme == 'personal' && scope.current_project == 'Jaisalmer')
 				width = '7900px';
-			else if ( scope.theme == 'personal' && scope.project == 'Ladakh')
+			else if ( scope.current_theme == 'personal' && scope.current_project == 'Ladakh')
 				width = '8700px';
-			else if ( scope.current_theme == 'main' && scope.current_scope == 'main')
+			else if ( scope.current_theme == 'main' && scope.current_project == 'main')
 				width = 'auto';
-			element.css({'width': width});
+			element.css('width', width);
+
+		}
+	}
+}).directive('freeTopstrip', function(){
+	return {
+		restrict: 'A',
+		scope: true,
+		link: function(scope, element, attrs){
+			$('#topstrip').css('position', 'static');
 		}
 	}
 });

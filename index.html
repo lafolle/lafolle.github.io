@@ -13,16 +13,16 @@
 	<div id="topstrip" >
 		<ul>
 			<li>
-				<span id="sc" class="darling" ng-click="goto('main', 'main')"><strong>{{name}}</strong></span> 
+				<span id="sc" style="cursor: pointer;" ng-click="goto('main', 'main')"><strong>{{name}}</strong></span> 
 			</li>
 
 			<li class="dropdown">
 					<a class="dropdown-toggle theme">personal</a>
 					<ul class="dropdown-menu">
-						<li ng-click="goto('personal', 'Beri')"><a style="line-height: 16px; padding-left: 0px;">The Roots</a></li>
-						<li ng-click="goto('personal', 'Puducherry')"><a style="line-height: 16px; padding-left: 0px;">Puducherry</a></li>
-						<li ng-click="goto('personal', 'Jaisalmer')"><a style="line-height: 16px; padding-left: 0px;">Life is a goodly thing</a></li>
-						<li ng-click="goto('personal', 'Ladakh')"><a style="line-height: 16px; padding-left: 0px;">Pause to begin</a></li>
+						<li ng-click="goto('personal', 'Beri')"><a style="line-height: 12px; padding-left: 0px;">The Roots</a></li>
+						<li ng-click="goto('personal', 'Puducherry')"><a style="line-height: 12px; padding-left: 0px;">Puducherry</a></li>
+						<li ng-click="goto('personal', 'Jaisalmer')"><a style="line-height: 12px; padding-left: 0px;">Life is a goodly thing</a></li>
+						<li ng-click="goto('personal', 'Ladakh')"><a style="line-height: 12px; padding-left: 0px;">Pause to begin</a></li>
 					</ul>
 				<span class="clearlr">|</span>
 			</li>
@@ -32,7 +32,7 @@
 			</li>
 
 			<li>
-				<span class="theme" id="biography"><a>biography</a></span> <span class="clearlr">|</span>
+				<span class="theme" id="biography" ng-click="goto('biography', 'biography')"><a>biography</a></span> <span class="clearlr">|</span>
 			</li>
 
 			<li>
