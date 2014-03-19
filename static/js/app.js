@@ -3,7 +3,7 @@ var mod = angular.module('Sak', ['ui.bootstrap']).config(['$routeProvider','$loc
 					when('/sire', {templateUrl: '/static/partials/sire.html', controller: 'SireCtrl'}).
 					when('/biography', {templateUrl: '/static/partials/biography.html', controller: 'BiographyCtrl'}).
 					when('/', {templateUrl: '/static/partials/main.html', controller: 'SakCtrl'});
-	$locationProvider.html5Mode(true);
+	// $locationProvider.html5Mode(true);
 }]);
 
 
